@@ -1,1 +1,1 @@
-# asus-backlight
+# lazy-backlight
