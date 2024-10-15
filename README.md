@@ -6,9 +6,8 @@ Installation
 ```
 git clone https://github.com/arghyarp/lazy-backlight.git
 cd lazy-backlight
-sudo cp lazy-backlight/usr/bin/
-sudo cp lazy-backlight.conf /etc/init/
-sudo start lazy-backlight
+sudo cp lazy-backlight /usr/bin/
+lazy-backlight allowusers
 ```
 
 

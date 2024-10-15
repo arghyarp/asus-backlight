@@ -9,7 +9,7 @@ min=0
 max=3
 # step: represent the difference between previous and next brightness
 step=1
-previous=$(cat ${path}/brightness)
+previous=$(sudo cat ${path}/brightness)
 
 function commit {
   if [[ $1 = [0-9]* ]]
@@ -23,7 +23,7 @@ function commit {
     else
       next=$1
     fi
-    echo $next >> ${path}/brightness
+    echo $next | sudo tee ${path}/brightness > /dev/null
     exit 0
   else
     exit 1
@@ -64,7 +64,7 @@ case "$1" in
     ;;
   allowusers)
     # Allow members of users group to change brightness
-    sudo chgrp adm ${path}/brightness
+    sudo chgrp arghya ${path}/brightness
     sudo chmod g+w ${path}/brightness
     ;;
   disallowusers)
